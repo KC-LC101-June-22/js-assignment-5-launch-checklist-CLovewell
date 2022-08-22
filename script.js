@@ -1,5 +1,5 @@
 // Write your JavaScript code here!
-
+//const fetch = require('isomorphic-fetch');
 //const { formSubmission } = require("./scriptHelper");
 
 //const { scriptHelper } = require("./scriptHelper");
@@ -7,7 +7,8 @@
 
 window.addEventListener("load", function () {
 
-    this.document.getElementById("faultyItems").setAttribute("style", "visibility: hidden");
+    //this.document.querySelector("#faultyItems > ol").setAttribute("style", "visibility: hidden;");
+    this.document.getElementById("faultyItems").setAttribute("style", "visibility: hidden;");
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse = myFetch();

@@ -7,6 +7,7 @@
 
 window.addEventListener("load", function () {
 
+    this.document.getElementById("faultyItems").setAttribute("style", "visibility: hidden");
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse = myFetch();
@@ -14,7 +15,6 @@ window.addEventListener("load", function () {
         listedPlanets = result;
         console.log(listedPlanets);
     }).then(function () {
-        console.log(listedPlanets);
         // Below this comment call the appropriate helper functions
         // to pick a planet fom the list of planets and add that information to your destination.
         let destination = pickPlanet(listedPlanets);
@@ -24,13 +24,12 @@ window.addEventListener("load", function () {
     let form = document.querySelector("form");
             form.addEventListener("submit", function(event) {
                 event.preventDefault();
-                console.log(document.querySelector("div#faultyItems ol"));
                 formSubmission(document, 
-                    document.querySelector("div#faultyItems ol"), 
-                    document.querySelector("input[name=pilotName]"), 
-                    document.querySelector("input[name=copilotName]"), 
-                    document.querySelector("input[name=fuelLevel]"), 
-                    document.querySelector("input[name=cargoLevel]"));
+                    document.querySelector("div#faultyItems"), 
+                    document.querySelector("input[name=pilotName]").value, 
+                    document.querySelector("input[name=copilotName]").value, 
+                    document.querySelector("input[name=fuelLevel]").value, 
+                    document.querySelector("input[name=cargoMass]").value);
             });
 
 });
